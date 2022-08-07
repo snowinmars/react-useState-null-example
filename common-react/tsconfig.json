@@ -1,0 +1,17 @@
+{
+  "extends": "../tsConfig.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "declarationDir": "./dist",
+    "checkJs": false,
+    "emitDeclarationOnly": true,
+    "jsx": "react-jsx"
+  },
+  "include": [
+    "src",
+    "webpack.config.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
