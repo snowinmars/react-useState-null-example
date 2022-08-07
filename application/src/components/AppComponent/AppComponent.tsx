@@ -6,7 +6,9 @@ import React, {
 } from 'react';
 
 import styles from './AppComponent.module.scss';
-import {useRequest} from "@snowinmars/common-react/hooks/useRequest";
+import {FullParentComponent} from "@snowinmars/common-react/components/FullParentComponent/FullParentComponent";
+import {useRequest} from "../hooks/useRequest";
+// import {useRequest} from "@snowinmars/common-react/hooks/useRequest";
 
 // eslint-disable-next-line no-extra-parens
 const AppComponent: FunctionComponent = (): JSX.Element => {
@@ -19,15 +21,17 @@ const AppComponent: FunctionComponent = (): JSX.Element => {
   return (
     <React.StrictMode>
       <div className={styles.container}>
-        {
-          loading && <p>loading</p>
-        }
-        {
-          !!result && <p>ok</p>
-        }
-        {
-          !!error && <p>error</p>
-        }
+        <FullParentComponent>
+          {
+            loading && <p>loading</p>
+          }
+          {
+            !!result && <p>ok</p>
+          }
+          {
+            !!error && <p>error</p>
+          }
+        </FullParentComponent>
       </div>
     </React.StrictMode>
   );
